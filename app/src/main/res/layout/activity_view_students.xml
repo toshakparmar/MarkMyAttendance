@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ACC0FA"
+    tools:context=".view_students">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="***MCA Student List***"
+       android:textColor="@color/darkblue"
+       android:textSize="30dp"
+       android:fontFamily="serif"
+       android:textFontWeight="500"
+       android:gravity="center"
+       android:layout_margin="10dp">
+   </TextView>
+   <RadioGroup
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/radioGroup"
+       android:orientation="horizontal"
+       android:layout_marginTop="10dp">
+      <RadioButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/nameWise"
+          android:text="Name"
+          android:onClick="checkCondition"
+          android:textSize="22dp"
+          android:textColor="@color/darkblue"
+          android:layout_marginLeft="60dp"/>
+      <RadioButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/qidWise"
+          android:text="Q-id"
+          android:checked="true"
+          android:onClick="checkCondition"
+          android:textSize="22dp"
+          android:textColor="@color/darkblue"
+          android:layout_marginLeft="40dp"/>
+   </RadioGroup>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/student_list"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

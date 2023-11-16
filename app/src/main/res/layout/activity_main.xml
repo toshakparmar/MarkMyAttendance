@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ACC0FA"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mark My Attendance"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="@color/darkblue"
+        android:fontFamily="serif"
+        android:layout_marginTop="80dp"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/image_attendance"
+        android:layout_gravity="center"
+        android:src="@drawable/attendance_logo"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="100dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/add_student"
+        android:text="Add Student"
+        android:fontFamily="serif"
+        android:textSize="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/darkblue"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/view_student"
+        android:text="View Students"
+        android:fontFamily="serif"
+        android:textSize="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/darkblue"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/mark_attendance"
+        android:text="Mark Attendance"
+        android:fontFamily="serif"
+        android:textSize="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/darkblue"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Powered By @CodeSmachers"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:textColor="@color/darkblue"
+        android:fontFamily="serif"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Toshak Parmar)"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:textColor="@color/darkblue"
+        android:fontFamily="serif"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
