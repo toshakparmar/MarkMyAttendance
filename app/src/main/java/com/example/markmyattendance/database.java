@@ -45,7 +45,7 @@ public class database extends SQLiteOpenHelper {
         if(selectedValue.equals("Q-id")){
             table_colname = "q_id";
         }else{
-           table_colname = "student_name";
+            table_colname = "student_name";
         }
         SQLiteDatabase db = this.getWritableDatabase();
         String qryread = "select * from students order by " + table_colname +" ASC";

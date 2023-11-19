@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -30,29 +31,24 @@ public class view_students extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         showdata("Name");
-//        Cursor cursor = new database(this).getStudents("Name");
-//        if (isNull(cursor)){
-//            Toast.makeText(this, "No Record Found! (Error 404)", Toast.LENGTH_SHORT).show();
-//        }
-//        while(cursor.moveToNext())
-//        {
-//            model obj = new model(cursor.getString(1),cursor.getString(2), cursor.getString(3));
-//            dataholder.add(obj);
-//            MyAdapter adapter = new MyAdapter(dataholder);
-//            recyclerView.setAdapter(adapter);
-//            adapter.notifyDataSetChanged();
-//        }
-    }
-    public void checkCondition(View view)
-    {
-        int radioid = radioGroup.getCheckedRadioButtonId();
-        radioButton = findViewById(radioid);
-        String radioValue = (String) radioButton.getText();
-        recyclerView.refreshDrawableState();
-        showdata(radioValue);
-        Toast.makeText(this, "Selected Radio Button: "+radioButton.getText(), Toast.LENGTH_SHORT).show();
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int radioid = radioGroup.getCheckedRadioButtonId();
+                radioButton = findViewById(radioid);
+                switch (checkedId) {
+                    case R.id.nameWise:
+                        showdata("Name");
+                        break;
+                    case R.id.qidWise:
+                        showdata("Q-id");
+                        break;
+                }
+            }
+        });
     }
     public void showdata(String datavalue) {
+        dataholder.clear();
         Cursor cursor = new database(this).getStudents(datavalue);
         if (isNull(cursor)) {
             Toast.makeText(this, "No Record Found! (Error 404)", Toast.LENGTH_SHORT).show();
@@ -62,7 +58,6 @@ public class view_students extends AppCompatActivity {
             dataholder.add(obj);
             MyAdapter adapter = new MyAdapter(dataholder);
             recyclerView.setAdapter(adapter);
-            adapter.notifyDataSetChanged();
         }
     }
 }

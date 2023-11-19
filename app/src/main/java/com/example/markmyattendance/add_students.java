@@ -60,7 +60,7 @@ public class add_students extends AppCompatActivity {
                         }
                     }
                 }else{
-                    Toast.makeText(add_students.this, "Please Validate Your all Fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(add_students.this, "Please Validate All Input Fields", Toast.LENGTH_SHORT).show();
                 }
             }
 
