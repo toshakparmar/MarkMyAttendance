@@ -1,21 +1,19 @@
 package com.example.markmyattendance;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.cardview.widget.CardView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
+
+import com.example.markmyattendance.mark_attendance.show_attendance_files;
+import com.example.markmyattendance.students.add_students;
+import com.example.markmyattendance.students.view_students;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button add_student,view_student,mark_attendance;
-    ImageView image_attendance;
+    CardView add_student,view_student,mark_attendance,show_pdf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         add_student = findViewById(R.id.add_student);
         view_student = findViewById(R.id.view_student);
         mark_attendance = findViewById(R.id.mark_attendance);
-        image_attendance = findViewById(R.id.image_attendance);
+        show_pdf = findViewById(R.id.show_pdf);
 
         add_student.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 mark_attendance();
             }
         });
-        image_attendance.setOnClickListener(new View.OnClickListener() {
+        show_pdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mark_attendance();
+                show_PDF();
             }
         });
     }
@@ -61,7 +59,17 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         public void mark_attendance(){
-            Intent intent = new Intent(this, mark_attendance.class);
+            Intent intent = new Intent(this, com.example.markmyattendance.mark_attendance.mark_attendance.class);
+            startActivity(intent);
+        }
+        public void show_PDF(){
+
+//            String FolderName = "Attendance Files";
+//            File filesPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+//            File files = new File(filesPath,FolderName);
+//            int count = files.listFiles().length;
+//            Log.d("FileCount",String.valueOf(count));
+            Intent intent = new Intent(this, show_attendance_files.class);
             startActivity(intent);
         }
 }

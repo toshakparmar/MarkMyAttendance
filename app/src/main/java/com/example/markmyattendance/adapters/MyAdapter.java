@@ -1,23 +1,26 @@
-package com.example.markmyattendance;
+package com.example.markmyattendance.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.markmyattendance.R;
+import com.example.markmyattendance.models.model;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.holder> {
 
     ArrayList<model> dataholder;
+    private OnEditListener editListener;
 
-    public MyAdapter(ArrayList<model> dataholder) {
+    public MyAdapter(ArrayList<model> dataholder,OnEditListener onEditListener) {
         this.dataholder = dataholder;
+        this.editListener = onEditListener;
     }
 
     @NonNull
@@ -31,9 +34,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.holder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.holder holder, int position)
     {
-       holder.student_qid.setText(dataholder.get(position).getStudent_qid());
-       holder.student_name.setText(dataholder.get(position).getStudent_name());
-       holder.student_phone.setText(dataholder.get(position).getStudent_phone());
+        holder.student_id.setText(dataholder.get(position).getStudent_id());
+        holder.student_qid.setText(dataholder.get(position).getStudent_qid());
+        holder.student_name.setText(dataholder.get(position).getStudent_name());
+        holder.student_phone.setText(dataholder.get(position).getStudent_phone());
     }
 
     @Override
@@ -42,12 +46,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.holder> {
     }
 
     class holder extends RecyclerView.ViewHolder{
-        TextView student_qid,student_name,student_phone;
+        TextView student_id, student_qid,student_name,student_phone;
         public holder(View itemView){
             super(itemView);
+            student_id = (TextView) itemView.findViewById(R.id.student_id);
             student_qid =  (TextView) itemView.findViewById(R.id.student_qid_show);
             student_name = (TextView) itemView.findViewById(R.id.student_name_show);
             student_phone = (TextView) itemView.findViewById(R.id.student_phone_show);
         }
+    }
+    public interface OnEditListener{
+        void editStudents(model currentdata);
     }
 }

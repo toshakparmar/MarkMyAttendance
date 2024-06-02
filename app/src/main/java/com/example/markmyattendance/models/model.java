@@ -1,12 +1,21 @@
-package com.example.markmyattendance;
+package com.example.markmyattendance.models;
 
 public class model {
-    String qid,name,phone;
+    String id,qid,name,phone;
 
-    public model(String student_qid, String student_name, String student_phone) {
+    public model(String student_id, String student_qid, String student_name, String student_phone) {
+        id = student_id;
         qid = student_qid;
         name = student_name;
         phone = student_phone;
+    }
+
+    public String getStudent_id() {
+        return id;
+    }
+
+    public void setStudent_id(String student_id) {
+        qid = student_id;
     }
 
     public String getStudent_qid() {

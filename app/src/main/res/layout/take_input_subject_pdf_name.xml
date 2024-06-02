@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/white"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardMaxElevation="12dp"
+    app:cardPreventCornerOverlap="true"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOTE:- Please Enter Subject/Lecture Name for Generate Attendance PDF to Specific Lecture..."
+            android:textSize="14dp"
+            android:textColor="@color/red"
+            android:layout_margin="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/darkblue"
+            android:id="@+id/textinputlayout_subject_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColorHint="@color/darkblue"
+            app:helperTextTextColor="@color/red">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/take_input_subject_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:hint="Enter Subject/Lecture Name"
+                android:textColorHint="@color/darkblue"
+                android:textColor="@color/darkblue"
+                android:lines="1"
+                android:inputType="textCapWords">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_margin="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submit_subject_name"
+            android:text="Submit"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel_subject_name"
+            android:text="Cancel"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:backgroundTint="@color/red"
+            android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

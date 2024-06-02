@@ -26,6 +26,8 @@ public class database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qryupdate);
         onCreate(sqLiteDatabase);
     }
+
+    //- Insert Student Records...
     public String add_student(String q_id ,String name,String phone){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues c = new ContentValues();
@@ -39,6 +41,8 @@ public class database extends SQLiteOpenHelper {
             return "yes";
         }
     }
+
+    //- Fetch Students Records...
     public Cursor getStudents(String selectedValue)
     {
         String table_colname;
@@ -53,4 +57,32 @@ public class database extends SQLiteOpenHelper {
         return  cursor;
     }
 
+    //- Update Students Records...
+    public String update_students(String id, String qid, String name, String mobile) {
+        SQLiteDatabase db = this.getWritableDatabase();
+//        String edit_qry = "update students set q_id='" + qid + "', student_name='" + name + "',student_no='" + mobile + "' where id='" + id + "';";
+        ContentValues c2 = new ContentValues();
+        c2.put("q_id",qid);
+        c2.put("student_name",name);
+        c2.put("student_no",mobile);
+        float r2 = db.update("students",c2,"id='"+id+"'", null);
+        if(r2 == -1){
+            return "no";
+        }else{
+            return "yes";
+        }
+    }
+
+    //- Delete Student Record...
+    public String delete_students(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+//        db.execSQL("delete from students where q_id='" + id + "';");
+        String[] ids = {id};
+        float r3 = db.delete("students","id='"+id+"'",null);
+        if(r3 == -1){
+            return "no";
+        }else{
+            return "yes";
+        }
+    }
 }

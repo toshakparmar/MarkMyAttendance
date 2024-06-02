@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/attendance_file_card"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="5dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+            <ImageView
+                android:id="@+id/pdfImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/pdf"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/attendance_file_name"
+                android:padding="5dp"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textColor="@color/darkblue"
+                android:layout_gravity="center"
+                android:layout_marginLeft="32dp"/>
+
+            <ImageButton
+                android:id="@+id/share_pdf"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/white"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/file_share"
+                android:layout_marginRight="30dp"/>
+
+            <ImageButton
+                android:id="@+id/delete_pdf"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/white"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/delete_file"
+                android:layout_marginRight="5dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

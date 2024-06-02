@@ -1,4 +1,4 @@
-package com.example.markmyattendance;
+package com.example.markmyattendance.students;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.markmyattendance.R;
+import com.example.markmyattendance.database;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class add_students extends AppCompatActivity {
@@ -42,6 +44,7 @@ public class add_students extends AppCompatActivity {
                 String Student_q_id = q_id.getText().toString();
                 String Student_name = name.getText().toString();
                 String Student_phone = phone.getText().toString();
+
                 if(isAllFieldsChecked == true) {
                     if (Student_q_id.equals("") && Student_name.equals("") && Student_phone.equals("")) {
                         Toast.makeText(add_students.this, "Enter all the Fields", Toast.LENGTH_SHORT).show();
@@ -63,46 +66,45 @@ public class add_students extends AppCompatActivity {
                     Toast.makeText(add_students.this, "Please Validate All Input Fields", Toast.LENGTH_SHORT).show();
                 }
             }
-
-            private boolean checkAllFields() {
-                if(q_id.length()==0){
-                    stud_qid.setHelperText("Student Q-id is Required");
-                    return false;
-                }else{
-                    if(q_id.length()<6){
-                        stud_qid.setHelperText("Please Enter 8 Digits Quantum-ID");
-                        return false;
-                    }else{
-                        stud_qid.setHelperText("");
-                    }
-                }
-                if(name.length()==0){
-                    stud_name.setHelperText("Student Name is Required");
-                    return false;
-                }else{
-                    if(name.length()<3){
-                        stud_name.setHelperText("Student Name is Aleast 3 Characters");
-                        return false;
-                    }else {
-                        stud_name.setHelperText("");
-                    }
-                }
-                if(phone.length()==0){
-                    stud_phoneno.setHelperText("Student Mobile No is Required");
-                    return false;
-                }else{
-                    if(phone.length()<10){
-                        stud_phoneno.setHelperText("Please Enter 10 Digits Mobile No");
-                        return false;
-                    }else{
-                        stud_phoneno.setHelperText("");
-                    }
-                }
-                stud_qid.setHelperText("");
-                stud_name.setHelperText("");
-                stud_phoneno.setHelperText("");
-                return true;
-            }
         });
+    }
+    private boolean checkAllFields() {
+        if(q_id.length()==0){
+            stud_qid.setHelperText("Student Q-id is Required");
+            return false;
+        }else{
+            if(q_id.length()<8){
+                stud_qid.setHelperText("Please Enter 8 Digits Quantum-ID");
+                return false;
+            }else{
+                stud_qid.setHelperText("");
+            }
+        }
+        if(name.length()==0){
+            stud_name.setHelperText("Student Name is Required");
+            return false;
+        }else{
+            if(name.length()<3){
+                stud_name.setHelperText("Student Name is Aleast 3 Characters");
+                return false;
+            }else {
+                stud_name.setHelperText("");
+            }
+        }
+        if(phone.length()==0){
+            stud_phoneno.setHelperText("Student Mobile No is Required");
+            return false;
+        }else{
+            if(phone.length()<10){
+                stud_phoneno.setHelperText("Please Enter 10 Digits Mobile No");
+                return false;
+            }else{
+                stud_phoneno.setHelperText("");
+            }
+        }
+        stud_qid.setHelperText("");
+        stud_name.setHelperText("");
+        stud_phoneno.setHelperText("");
+        return true;
     }
 }

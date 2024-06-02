@@ -6,21 +6,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_marginTop="5dp"
-    android:background="#ACC0FA">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:cardMaxElevation="10dp"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="@color/darkblue">
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_id"
+                android:textSize="18dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/darkblue"
+                android:visibility="gone"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,9 +40,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/q_id"
                     android:textSize="18dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkblue"
                     android:text="Q-id: - "/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -40,8 +50,8 @@
                     android:id="@+id/student_qid_show"
                     android:layout_marginLeft="72dp"
                     android:textSize="18dp"
-                    android:fontFamily="serif"
-                    android:textColor="@color/white"/>
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="@color/darkblue"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,9 +62,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/student_Name"
                     android:textSize="18dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkblue"
                     android:text="Name: - "/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -62,8 +72,8 @@
                     android:id="@+id/student_name_show"
                     android:layout_marginLeft="60dp"
                     android:textSize="18dp"
-                    android:fontFamily="serif"
-                    android:textColor="@color/white"/>
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="@color/darkblue"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,9 +84,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/student_Phone"
                     android:textSize="18dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:layout_marginLeft="30dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkblue"
                     android:text="Contact No: - "/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -84,8 +94,8 @@
                     android:id="@+id/student_phone_show"
                     android:layout_marginLeft="16dp"
                     android:textSize="18dp"
-                    android:fontFamily="serif"
-                    android:textColor="@color/white"/>
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="@color/darkblue"/>
             </LinearLayout>
     </LinearLayout>
     </androidx.cardview.widget.CardView>

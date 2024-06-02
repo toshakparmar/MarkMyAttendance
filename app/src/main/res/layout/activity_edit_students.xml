@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/darkblue"
-    tools:context=".students.add_students">
+    android:backgroundTint="@color/white"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardMaxElevation="12dp"
+    app:cardPreventCornerOverlap="true"
+    android:layout_margin="10dp">
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/add_stud"
-            android:layout_gravity="center"
-            app:tint="@color/white"
-            android:layout_marginRight="5dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Students!"
-            android:textSize="25dp"
-            android:textColor="@color/white"
-            android:fontFamily="sans-serif-medium"/>
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardPreventCornerOverlap="true"
-        android:layout_gravity="center"
-        app:cardUseCompatPadding="true"
-        android:layout_marginTop="5dp">
+            android:id="@+id/editBoxClose"
+            android:background="@drawable/close"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"/>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/edit_stud"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Student Details!"
+                android:textSize="25dp"
+                android:textColor="@color/darkblue"
+                android:fontFamily="sans-serif-medium"/>
+        </LinearLayout>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/add_students"
+            android:src="@drawable/edit_students"
             android:layout_marginTop="20dp"/>
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/darkblue"
-            android:id="@+id/textinputlayout_qid"
+            android:id="@+id/edit_textinputlayout_qid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -64,12 +65,12 @@
             app:counterMaxLength="8"
             app:counterTextColor="@color/darkblue">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/student_id"
+                android:id="@+id/edit_student_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:fontFamily="sans-serif-smallcaps"
-                android:hint="Enter Your Q-id"
+                android:hint="Edit Your Q-id"
                 android:textColor="@color/darkblue"
                 android:lines="1"
                 android:maxLength="8"
@@ -80,7 +81,7 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/darkblue"
-            android:id="@+id/textinputlayout_name"
+            android:id="@+id/edit_textinputlayout_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -89,22 +90,22 @@
             android:textColorHint="@color/darkblue"
             app:helperTextTextColor="@color/red">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/student_name"
+                android:id="@+id/edit_student_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:textColor="@color/darkblue"
-                android:hint="Enter Your Name"
+                android:hint="Edit Your Name"
                 android:lines="1"
-                android:inputType="textCapWords">
+                android:inputType="textPersonName">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/darkblue"
-            android:id="@+id/textinputlayout_phoneno"
+            android:id="@+id/edit_textinputlayout_phoneno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -116,12 +117,12 @@
             app:counterMaxLength="10"
             app:counterTextColor="@color/darkblue">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/student_phone"
+                android:id="@+id/edit_student_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:fontFamily="sans-serif-smallcaps"
-                android:hint="Enter Your Mobile No"
+                android:hint="Edit Your Mobile No"
                 android:textColor="@color/darkblue"
                 android:lines="1"
                 android:maxLength="10"
@@ -132,14 +133,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/student_add"
+            android:id="@+id/student_update"
             android:text="Submit"
             android:fontFamily="sans-serif-smallcaps"
             android:textSize="18dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
 
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

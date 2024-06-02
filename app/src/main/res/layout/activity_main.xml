@@ -5,77 +5,216 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ACC0FA"
+    android:background="@color/darkblue"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mark My Attendance"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:textColor="@color/darkblue"
-        android:fontFamily="serif"
-        android:layout_marginTop="80dp"/>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/image_attendance"
-        android:layout_gravity="center"
-        android:src="@drawable/attendance_logo"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="100dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:id="@+id/add_student"
-        android:text="Add Student"
-        android:fontFamily="serif"
-        android:textSize="15dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/darkblue"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:id="@+id/view_student"
-        android:text="View Students"
-        android:fontFamily="serif"
-        android:textSize="15dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/darkblue"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:id="@+id/mark_attendance"
-        android:text="Mark Attendance"
-        android:fontFamily="serif"
-        android:textSize="15dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/darkblue"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/mark_attendance"
+            android:layout_gravity="center"
+            app:tint="@color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mark My Attendance"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-condensed-medium" />
+    </LinearLayout>
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Powered By @CodeSmachers"
-        android:textSize="18dp"
-        android:gravity="center"
-        android:textColor="@color/darkblue"
-        android:fontFamily="serif"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="30dp"
+        android:layout_margin="8dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="(Toshak Parmar)"
-        android:textSize="15dp"
-        android:gravity="center"
-        android:textColor="@color/darkblue"
-        android:fontFamily="serif"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_gravity="center"
+                app:cardUseCompatPadding="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/mark_my_attendance_logo"/>
+            </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardMaxElevation="12dp"
+                    app:cardPreventCornerOverlap="true"
+                    android:layout_gravity="center"
+                    android:id="@+id/mark_attendance"
+                    android:layout_margin="10dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:padding="10dp">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/mark_attendance"
+                        android:layout_marginRight="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mark Attendance"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textSize="26dp"
+                        android:textColor="@color/darkblue"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="12dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/add_stud" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Add Student"
+                            android:textColor="@color/darkblue"
+                            android:textSize="26dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardMaxElevation="12dp"
+                    app:cardPreventCornerOverlap="true"
+                    android:layout_margin="10dp"
+                    android:id="@+id/view_student"
+                    android:layout_alignParentRight="true">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:padding="10dp">
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/show_stud"
+                                android:layout_marginRight="5dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="View Student"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textSize="26dp"
+                                android:textColor="@color/darkblue"/>
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="12dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                android:layout_gravity="center"
+                android:id="@+id/show_pdf"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/pdf"
+                        android:layout_marginRight="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Attendance Files"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textSize="26dp"
+                        android:textColor="@color/darkblue"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Powered By @CodeSmachers"
+                android:layout_alignParentBottom="true"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:textColor="@color/darkblue"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_marginBottom="35dp"/>
+
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Toshak Parmar)"
+                android:layout_alignParentBottom="true"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textColor="@color/darkblue"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
